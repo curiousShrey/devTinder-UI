@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100">
     <div className="flex-1">
-      <Link to='/' className="btn btn-ghost text-xl"> Dev Tinder</Link>
+      <Link to='/home' className="btn btn-ghost text-xl"> 📂 Resume Version Manager</Link>
     </div>
     {user && <div className="flex-none gap-1">
       <p>Welcome, {user.firstName}</p>
@@ -43,6 +43,11 @@ const Navbar = () => {
           <li>
             <Link to='/profile' className="justify-between">
               Profile
+            </Link>
+          </li>
+          <li>
+            <Link to='/feed' className="justify-between">
+              Feed
             </Link>
           </li>
           <li><a onClick={handleLogout}>Logout</a></li>

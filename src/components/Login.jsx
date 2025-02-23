@@ -22,7 +22,7 @@ const clickHandler = async () => {
             withCredentials: true
           })
          dispatch(addUser(res.data));
-         return navigate('/');
+         return navigate('/home');
     } catch (error) {
         setError(error?.response?.data || 'Something went wrong.');
         setTimeout(()=>{
