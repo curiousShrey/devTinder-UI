@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'; 
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'; 
 import { addUser } from '../utils/userSlice';
 import { useNavigate } from 'react-router-dom';
 import {BASE_URL} from '../utils/constants';
@@ -9,6 +9,7 @@ const Login = () => {
 
     const [emailId, setEmailId] = useState('shrey@gmail.com');
     const [password, setPassword] = useState('Shrey@123');
+    const [error, setError] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -23,6 +24,10 @@ const clickHandler = async () => {
          dispatch(addUser(res.data));
          return navigate('/');
     } catch (error) {
+        setError(error?.response?.data || 'Something went wrong.');
+        setTimeout(()=>{
+          setError('');
+        }, 3000);
         console.error(error);
     }
 }
@@ -50,6 +55,7 @@ const clickHandler = async () => {
                       </label>
 
               </div>
+              <p className='text-sm text-red-500' > {error} </p>
               <div className="card-actions justify-center m-2">
                   <button className="btn btn-primary" onClick={clickHandler}>Login</button>
               </div>
