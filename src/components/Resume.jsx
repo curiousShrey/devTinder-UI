@@ -14,7 +14,7 @@ const Resume = ({ resume }) => {
             </figure>
             <div className="card-body">
                 <h2 className="card-title overflow-x-auto">{resume.name}</h2>
-                <p>{`This is a resume for ${resume?.role} for skills ${resume?.skills}` || "This is a default description."}</p>
+                <p>{`This is a resume for ${resume?.role} with skills ${resume?.skills}` || "This is a default description."}</p>
                 <div className="card-actions justify-end">
                     <button className="btn btn-primary" onClick={viewResumeButtonHandler}>View</button>
                 </div>

@@ -95,10 +95,10 @@ const Feed = () => {
           <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
             <div className="modal-box">
               <label className="input input-bordered flex items-center gap-2 mb-2">
-                <input type="text" name="name" placeholder="Name" value={formData['name']} onChange={handleInputChange} className="grow" required/>
+                <input type="text" name="name" placeholder="Name (required) " value={formData['name']} onChange={handleInputChange} className="grow" required/>
               </label>
               <label className="input input-bordered flex items-center gap-2 mb-2">
-                <input type="text" name="resumeLink" placeholder="Resume Link" value={formData['resumeLink']} onChange={handleInputChange} className="grow" required />
+                <input type="text" name="resumeLink" placeholder="Resume Link (required) " value={formData['resumeLink']} onChange={handleInputChange} className="grow" required />
               </label>
               <label className="input input-bordered flex items-center gap-2 mb-2">
                 <input type="text" name="role" placeholder="Role" value={formData['role']}  onChange={handleInputChange} className="grow"  />
@@ -118,7 +118,7 @@ const Feed = () => {
               </label>
               
               <div className="modal-action flex justify-around">
-                <button onClick={handleAddResume}>Add</button>
+                {(formData['name'] && formData['resumeLink'] ) && <button onClick={handleAddResume}>Add</button>}
                 <form method="dialog">
                   <button>Close</button>
                 </form>
