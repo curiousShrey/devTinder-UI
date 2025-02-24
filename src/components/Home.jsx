@@ -5,7 +5,7 @@ const Home = () => {
 
 const navigate = useNavigate();
 
-const addButtonHandler = () => {
+const startButtonHandler = () => {
     navigate('/feed');
 }
   return (
@@ -23,7 +23,7 @@ const addButtonHandler = () => {
             <p className="mb-5 text-yellow-50 bg-blend-overlay font-extrabold">
              Saves your time to manage, handle and get ready with a company or role specefic resume at any moment.
             </p>
-            <button className="btn btn-primary" onClick={addButtonHandler}>Add your resume here</button>
+            <button className="btn btn-primary" onClick={startButtonHandler}>Get Started</button>
           </div>
         </div>
       </div>
